@@ -19,11 +19,7 @@ public class WebSocketServerVerticle extends AbstractVerticle {
       ctx.writeTextMessage("Ping");
       ctx.textMessageHandler(message -> {
         System.out.println("Server " + message);
-        if((new Random()).nextInt(100) == 0) {
-          ctx.close();
-        } else {
-          ctx.writeTextMessage("Ping");
-        }
+        ctx.writeTextMessage("Ping");
       });
     }).listen(8080);
   }

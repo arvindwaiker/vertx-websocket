@@ -31,13 +31,17 @@ dependencies {
   implementation(platform("io.vertx:vertx-stack-depchain:$vertxVersion"))
   implementation("io.vertx:vertx-web-client")
   implementation("io.vertx:vertx-web")
+  implementation("io.vertx:vertx-tcp-eventbus-bridge")
+  implementation("io.vertx:vertx-eventbus-bridge-client:1.0.1")
+  implementation("com.google.code.gson:gson:2.9.0")
+  implementation("com.fasterxml.jackson.core:jackson-databind:2.13.0")
   testImplementation("io.vertx:vertx-junit5")
   testImplementation("org.junit.jupiter:junit-jupiter:$junitJupiterVersion")
 }
 
 java {
-  sourceCompatibility = JavaVersion.VERSION_11
-  targetCompatibility = JavaVersion.VERSION_11
+  sourceCompatibility = JavaVersion.VERSION_17
+  targetCompatibility = JavaVersion.VERSION_17
 }
 
 tasks.withType<ShadowJar> {

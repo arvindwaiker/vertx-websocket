@@ -7,6 +7,7 @@ public class Main {
 
     Vertx vertx = Vertx.vertx();
 
-    vertx.deployVerticle(new WebSocketServerVerticle(), (__) -> vertx.deployVerticle(new WebSocketClientVerticle()));
+//    vertx.deployVerticle(new WebSocketServerVerticle(), (__) -> vertx.deployVerticle(new WebSocketClientVerticle()));
+    vertx.deployVerticle(new EventBusVerticle(), (__) -> vertx.deployVerticle(new TestVerticle()));
   }
 }
